@@ -24,85 +24,14 @@
         <p id="show"></p>
     </div>
 
-    <div id="boxes" style="display: flex;justify-content: center;align-items: center; margin-top: 120px; visibility: hidden; ">
-        <button onclick="deletecom()" class="btn btn-dark btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete first item</button>
-        <button class="btn btn-success btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete last item</button>
-        <button class="btn btn-warning btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete any item</button>
+    <div id="boxes" style="display: flex;justify-content: center;align-items: center; margin-top: 120px; visibility:hidden; ">
+        <button onclick="deletecomFirst()" class="btn btn-dark btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete first item</button>
+        <button onclick="deletecomlast()" class="btn btn-success btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete last item</button>
+        <button onclick="deleteAny()" class="btn btn-warning btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete any item</button>
         <button class="btn btn-info btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Edit item</button>
-        <button class="btn btn-primary btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Add any item to the start</button>
-        <button class="btn btn-secondary btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete all item</button>
+        <button onclick="addstart()" class="btn btn-primary btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Add any item to the start</button>
+        <button onclick="deleteall()" class="btn btn-secondary btn-sm my-3 w-40 ms-4 p-3"  style="height: 60px;">Delete all item</button>
     </div>
-    <script>
-        let allTodos = []
-        function eCom(){
-            let inputOne = document.getElementById('todo').value
-            
-            if (inputOne == '' ) {
-                showError.style.display = 'block'
-                showError2.style.display = 'block'
-                boxes.style.visibility = 'hidden'
-            } else {
-                showError.style.display = 'none'
-                showError2.style.display = 'none'
-                boxes.style.visibility = 'visible'
-            let comObj = {
-                todo: inputOne,
-            }
-            allTodos.push(comObj)
-                document.getElementById('todo').value = ''
-                console.log(allTodos);
-            
-            deletecom()
-        }
-
-        }
-        function deletecom(){
-         allTodos.pop(0)
-         document.getElementById('todo').value = ' '
-         console.log(allTodos)
-
-        }
-        // let alltodos = []
-        // function addTodo(){
-        //     let inputOne = document.getElementById('todo').value
-        //     let inputTwo = document.getElementById('desc').value
-        //     let date = new Date().toLocaleDateString()
-        //     let time = new Date().toLocaleTimeString()
-        //     // console.log(inputOne,inputTwo,date,time);
-
-        //     if(inputOne=='' || inputTwo==''){
-        //     showError.style.display = 'block'
-        //     }else{
-        //         showError.style.display = 'none'
-        //         let todoObj = {
-        //             todo:inputOne,
-        //             desc:inputTwo,
-        //             date,
-        //             time
-        //         }
-        //         alltodos.push(todoObj)
-        //         document.getElementById('todo').value=' '
-        //         document.getElementById('desc').value=' '
-        //         console.log(alltodos);
-
-        //         displayTodo()
-        //     }
-        // }
-        // function displayTodo() {
-        //     show.innerHTML = ''
-        //         for (var i = 0; i < allTodos.length; i++) {
-        //             var showedTodo = allTodos[i].todo
-        //             var showedDesc = allTodos[i].desc
-        //             var showedDate = allTodos[i].date
-        //             var showedTime = allTodos[i].time
-
-        //             show.innerHTML += `
-        //                 <h1>${showedTodo}</h1>
-        //                 <h3>${showedDesc}</h3>
-        //                 <small>${showedDate}, ${showedTime}</small>
-        //             `
-        //         }
-        // }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
